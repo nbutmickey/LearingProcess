@@ -13,7 +13,7 @@
   ],
   "deploy": {
     "production": {
-      "user": "xuthus_y",
+      "user": "mickey",
       "host": ["47.100.253.114"],
       "port": "22",
       "ref": "origin/master",
