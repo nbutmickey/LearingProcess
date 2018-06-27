@@ -10,9 +10,11 @@ function resolve (dir) {
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
+  //页面入口配置文件
   entry: {
     app: './src/main.js'
   },
+  //插件项
   plugins:[
     // 配置jQuery插件
     new webpack.ProvidePlugin(
@@ -23,6 +25,7 @@ module.exports = {
       }
     )
   ],
+  //入口文件输出配置
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -30,7 +33,9 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
+  //其他解决配置
   resolve: {
+    //自动扩展文件后缀名，意味着我们require模块可以省略不写后缀名
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
@@ -38,6 +43,7 @@ module.exports = {
     }
   },
   module: {
+    //加载器配置
     rules: [
       {
         test: /\.vue$/,

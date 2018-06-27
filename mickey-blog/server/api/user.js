@@ -6,14 +6,12 @@ let bcrypt=require('bcryptjs');
 
 //获取单个用户信息
 router.get('/user',(req,res,next)=>{
-  const token = req.body.params.accesstoken;
+  const token = req.headers.accesstoken;
   const decode = jwt.verify(token, 'mickey');
-  const username=decode.username;
-  console.log(username);
+  const username=decode.name;
   User.findOne({name:username}).then(
     user=>{
-      console.log(user);
-      return res.status(200).send(user);
+     res.json(user);
     }
   ).catch(next);
 });
@@ -23,8 +21,7 @@ router.post('/users/login',(req,res,next)=>{
     let data={
       username:req.body.params.username,
       password:req.body.params.password,
-      type:req.body.params.type,
-      role:req.body.params.role
+      type:req.body.params.type
     };
     if(data.type==='signin'){
         User.findOne({name:data.username}).then(user=>{
@@ -50,6 +47,7 @@ router.post('/users/login',(req,res,next)=>{
                 success:true,
                 message:'登陆成功',
                 token:token,
+                role:user.role
               });
             }
           }else{
@@ -74,7 +72,7 @@ router.post('/users/login',(req,res,next)=>{
                 name:data.username,
                 password:hash_password,
                 avatar_url:'http://i1.fuimg.com/605011/1f0138a7b101b0f1.jpg',
-                role:data.role
+                role:'user'
               };
                 User.create(userInfo).then(
                   (user)=>{

@@ -4,7 +4,7 @@ module.exports=function (req,res,next) {
   if(req.method!=='POST'){
     next()//post请求才需要权限验证
   }else{
-    const token=req.headers.accesstoken||req.body.headers.token||req.query.token;
+    const token=req.headers.accesstoken||req.query.token;
     if(token){
       console.log(token);
       jwt.verify(token,'mickey',(err,decoded) =>{

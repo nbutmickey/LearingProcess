@@ -28,7 +28,8 @@ export default new Router({
     {
       path:'/music',
       name:'Music',
-      component:Music
+      component:Music,
+
     },
     {
       path:'/about',

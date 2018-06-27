@@ -37,12 +37,13 @@
        ...mapMutations(
          [
            'setSignType',
-           'setToken'
+           'setToken',
+           'setRole'
          ]
        ),
        setCookie:function(name,value){
          let exp=new Date();
-         exp.setTime(exp.getTime()+24*60*60*1000);
+         exp.setTime(exp.getTime()+3*60*1000);
          document.cookie=name+"="+value+";expires="+exp.toUTCString();
        },
          open_success(){
@@ -76,21 +77,22 @@
               return;
             }
             this.loading=true;
-            const {data:{success,message,token}}=await this.$http.post('http://localhost:3000/users/login',{
+            const {data:{success,message,token,role}}=await this.$http.post('http://localhost:3000/users/login',{
               params:{
                 username:this.uname,
                 password:this.pwd,
                 type:type,
-                role:'ordinary'
               }
             });
             this.uname='';
             this.pwd='';
             this.tips=message;
             if(success){
-              console.log(token);
+              //利用cookie存储token
               this.setCookie("mickey-token",token);
               this.setToken(token);
+              this.setRole(role);
+              console.log(this.role);
               if(type==='signin'){
                 this.open_success();
                 this.$router.replace('/blog');
@@ -126,6 +128,7 @@
         ...mapState([
           'SignType',
           'token',
+          'role'
         ])
       }
     }

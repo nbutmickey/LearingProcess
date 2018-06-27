@@ -54,12 +54,15 @@
         )
       },
       mounted(){
-          const {data:{name}}=this.$http.get('http://localhost:3000/user',{
-            params:{
-              accesstoken:this.token,
+        if(this.token!=='') {
+          this.$http.get('http://localhost:3000/user', {
+            headers: {
+              accesstoken: this.token
             }
-          });
-          this.username=name;
+          }).then((res) => {
+            this.username = res.data.name;
+          })
+        }
         }
     }
 </script>
@@ -124,10 +127,10 @@
          }
        }
        .user_name{
-         margin-top: 10px;
+         margin-top: -40px;
          text-align: center;
          color: white;
-         font-size: 28px;
+         font-size: 45px;
          font-weight: bold;
        }
        .user_note{

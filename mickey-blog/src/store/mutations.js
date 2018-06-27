@@ -4,6 +4,9 @@ const mutations={
   },
   setToken(state,token){
     state.token=token
+  },
+  setRole(state,role){
+    state.role=role
   }
 };
 export  default mutations;
