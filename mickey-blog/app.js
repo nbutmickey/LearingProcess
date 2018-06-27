@@ -6,7 +6,7 @@ const env=process.env.NODE_ENV||'development';
 const path=require('path');
 let app=express();
 
-let dburl='mongodb://localhost:27017/mickey';
+let dburl='mongodb://47.100.253.114:27017/mickey';
 //连接mongodb数据
 if(env!=='development'){
   dburl='mongodb://localhost:27017/mickey'
