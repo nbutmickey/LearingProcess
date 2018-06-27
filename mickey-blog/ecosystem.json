@@ -18,7 +18,7 @@
       "port": "22",
       "ref": "origin/master",
       "repo": "git@github.com:nbutmickey/myGitRepository.git",
-      "path": "/www/source/mickey-blog",
+      "path": "/var/www/production",
       "ssh_options": "StrictHostKeyChecking=no",
       "post-deploy" : "npm install && npm run build && pm2 startOrRestart ecosystem.json --env production",
       "env"  : {
