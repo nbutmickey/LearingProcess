@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>myWebsite</title>
+    <!--<link rel="stylesheet" href="../base.css" type="text/css"/>-->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: "Microsoft Yi Baiti";
+            line-height: 24px;
+            background-color: #f3f3f3;
+            color: #444;
+            /*font-size: 20px;*/
+            height: 100%;
+            width: auto;
+        }
+        ul li{
+            text-decoration: none;
+            list-style: none;
+        }
+        h1,h2,h4,h5,h6{
+            font-weight: normal;
+        }
+        .clear{
+            clear: both;
+        }
+        .wrapper{
+            max-width: 700px;
+            margin: 40px auto 30px;
+            padding: 60px;
+            background: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: relative;
+            /*height: 100vh;*/
+        }
+        h2.sectionHand{
+            clear: both;
+            font-weight: bold;
+            margin: 60px -60px;
+            border-left: 52px solid #444;
+            color: #444444;
+            padding: 2px 0 0 8px;
+            position: relative;
+        }
+        h2.sectionHand:before{
+            content: '';
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            left: -105px;
+            top: -15px;
+            background-image: url("../images/icons.png");
+        }
+        h2#titleName{
+              margin: 20px -60px 10px;
+        }
+        h2#titleName:before{
+            background-position: -90px bottom;
+        }
+        /*h2#tools{*/
+            /*margin: 20px -60px 10px;*/
+        /*}*/
+        /*选取icon里面的图标*/
+        h2#tools:before{
+            background-position:left top;
+        }
+        h2#job:before{
+            background-position: -45px top;
+        }
+        h2#school:before{
+            background-position: right top;
+        }
+        h2#award:before{
+            background-position: left -45px;
+        }
+        #bio{
+            position: relative;
+        }
+        #bio h2{
+            font-size: 15px;
+            font-weight: 200;
+        }
+        #bio p{
+            clear: left;
+            margin: 40px auto;
+            padding: 40px 45px;
+            max-width: 560px;
+            background: #fbfbfb;
+            border: 1px solid #f3f3f3;
+            border-radius:8px;
+            position: relative;
+        }
+        ul{
+            position: relative;
+        }
+        ul#skills .details,
+        ul#jobs .details,
+        ul#schools .details{
+            float: left;
+            width: 40%;
+            margin-bottom: 25px;
+        }
+        ul#skills li,
+        ul#jobs li,
+        ul#awards li{
+            margin: 0 0 20px 0;
+            clear: both;
+        }
+        ul#awards li{
+            list-style-type: disc;
+        }
+        ul#skills li >p,
+        ul#jobs li >p,
+        ul#schools li>p{
+            float: right;
+            width: 60%;
+            margin-bottom: 25px;
+        }
+        .details h3{
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <h2 id="titleName" class="sectionHand">史仲炜</h2>
+    <div id="bio">
+        <h2>Web前端开发工程师</h2>
+        <p>我叫史仲炜，来自宁波工程学院电信学院网络工程系，男，今年21岁，主修计算机科学与技术，
+        精通HTML5+CSS3+JavaScript，会使用前端UI框架bootstrap、element-ui和前端框架Jquery、Vue.js
+        了解node.js和MySQL数据库</p>
+    </div>
+    <div class="clear"></div>
+    <h2 id="tools" class="sectionHand">个人技能</h2>
+    <ul id="skills">
+       <li>
+           <div class="details">
+               <h3>HTML5+CSS3+JavaScript</h3>
+           </div>
+           <p>熟练并精通使用</p>
+       </li>
+        <li>
+            <div class="details">
+                <h3>Bootstrap&element-ui</h3>
+            </div>
+            <p>熟练并精通使用</p>
+        </li>
+        <li>
+            <div class="details">
+                <h3>jQuery+Vue.js</h3>
+            </div>
+            <p>熟练并精通使用</p>
+        </li>
+    </ul>
+    <div class="clear"></div>
+    <h2 id="job" class="sectionHand">工作经验</h2>
+    <ul id="jobs">
+        <li>
+            <div class="details">
+            <h3>XX科技有限公司</h3>
+            <h4>Web前端工程师</h4>
+            <h5>2013.09 - 2015.06</h5>
+            </div>
+            <p>利用(X)HTML/CSS/JavaScript/Flash等各种Web技术进行客户端产品的开发。完成客户端程序（也就是浏览器端）的开发，开发JavaScript以及Flash模块，同时结合后台开发技术模拟整体效果，
+                进行丰富互联网的Web开发，致力于通过技术改善用户体验。</p>
+        </li>
+        <li>
+            <div class="details">
+                <h3>XX信息公司</h3>
+                <h4>Web前端工程师、设计师</h4>
+                <h5>2017.09 - 2018.06</h5>
+            </div>
+            <p>开发JavaScript以及Flash模块，同时结合后台开发技术模拟整体效果，
+                进行丰富互联网的Web开发，致力于通过技术改善用户体验。</p>
+        </li>
+    </ul>
+    <div class="clear"></div>
+    <h2 id="school" class="sectionHand">教育背景</h2>
+    <ul id="schools">
+        <li>
+            <div class="details">
+                <h3>宁波工程学院</h3>
+                <h4>网络工程</h4>
+                <h5>2016.09 - 2020.06</h5>
+            </div>
+            <p>主要学习高等数学、线性代数、概率论与数理统计、离散数学、组合数学、
+                计算机原理、人工智能、程序设计基础、面向对象程序设计、数字逻辑电路、模拟电子技术、数据结构、算法设计、WEB程序设计、计算机组成与结构、操作系统、数据库系统原理、编译原理、计算机网络、网络工程、软件工程、数据库应用、信息安全、微型计算机技术、汇编语言、单片机技术、嵌入式系统、
+                嵌入式操作系统、嵌入式设计与应用、移动设备应用软件开发等。</p>
+        </li>
+    </ul>
+    <div class="clear"></div>
+
+    <h2 id="award" class="sectionHand">教育背景</h2>
+    <ul id="awards">
+        <li>CET-6英语6级，优秀的听说写能力</li>
+        <li>国家励志奖学金</li>
+        <li>校优秀团员</li>
+    </ul>
+    <div class="clear"></div>
+</div>
+</body>
+</html>

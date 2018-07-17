@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS动画</title>
+    <style>
+        #box{
+            box-sizing: border-box;
+            padding: 160px 60px;
+        }
+        #box div{
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            background: #e70f23;
+            color: white;
+            font-size: 20px;
+            line-height: 100px;
+            overflow: hidden;
+        }
+        #box div a{
+            cursor: pointer;
+            display: block;
+            transition: margin .5s ease-in-out;
+        }
+        /*选取第二个a标签并更改其背景色*/
+        #box div a:nth-of-type(even){
+            background: black;
+        }
+        /*当滑动到a标签时候，动画开始进行切换，利用margin实现*/
+        #box div:hover a:first-child{
+            margin-top: -100px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div  id="box" style="width: 1000px;height: 500px;background: darkgray;border-radius: 5px;box-shadow: 0 2px 5px rgba(0,0,0,0.1);margin: 0 auto ">
+    <div><a>HOME</a><a>HOME</a></div>
+    <div><a>ABOUT</a><a>ABOUT</a></div>
+    <div><a>JOIN US</a><a>JOIN US</a></div>
+    <div><a>CONTACT</a><a>CONTACT</a></div>
+</div>
+</body>
+</html>
