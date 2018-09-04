@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue双向数据绑定</title>
+</head>
+<body>
+<input type="text" id="txt">
+<p id="show"></p>
+</body>
+<script>
+//     Object.defineProperty是ES5新增的一个API，其作用是给对象的属性增加更多的控制
+//     Object.defineProperty(obj, prop, descriptor)
+//     参数 obj: 需要定义属性的对象（目标对象）
+//     prop: 需被定义或修改的属性名（对象上的属性或者方法）
+//     对于setter和getter，我的理解是它们是一对勾子（hook）函数，当你对一个对象的某个属性赋值时，则会自动调用相应的setert函数；而当获取属性时，
+//     则调用getter函数。这也是实现双向数据绑定的关键。
+    let obj={}
+    Object.defineProperty(obj,'txt',{
+        get:()=> {
+            return obj
+        },
+        set:(newValue)=>{
+            document.getElementById("txt").value=newValue
+            document.getElementById("show").innerHTML=newValue
+        }
+    })
+
+    document.addEventListener("keyup",function (e) {
+        obj.txt=e.target.value
+    })
+</script>
+</html>
