@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Promise.all方法用于将多个 Promise 实例，包装成一个新的 Promise 实例
+    //1、只有当多个promise实例同时为resolve状态时，这个Promise的状态才为resolve,否则为reject。
+    //2、如果作为参数的 Promise 实例，自己定义了catch方法，那么它一旦被rejected，并不会触发Promise.all()的catch方法,相反会变成resolved.
+    const p1=new Promise((resolve,reject)=>{
+        resolve("Hello")
+    }).then(result=>result).catch(e=>e)
+
+    const p2=new Promise((resolve,reject)=>{
+        throw new Error("出错了")
+    }).then(result=>result).catch(e=>e)
+
+    Promise.all([p1,p2])
+        .then(result=>{console.log(result)})
+        .catch(e=>{console.log(e)})
+
+    //以上例子会输出["Hello",'出错了']
+    //原因：首先p1会resolved，p2会rejected，但是p2有自己的catch方法，该方法返回的是一个新的promise实例，
+    // 那么p2指向的其实就是该实例，p2执行完catch之后，也会变成resolved,导致Promise.all()方法参数里面的两个实例都会resolved，
+    // 因此会调用then方法指定的回调函数，而不会调用catch方法指定的回调函数。
+
+
+
+    //以下代码用于测试扩展运算符！！！
+    let arr1=['s','z','w']
+    let arr2=['m','i','c','k','e','y']
+    console.log([...arr1,...arr2]);
+</script>
+</body>
+</html>
