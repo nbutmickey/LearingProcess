@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const p1=new Promise((resolve,reject)=>{
+        setTimeout(()=>reject(new Error("fail")),3000)
+    })
+    const p2=new Promise((resolve,reject)=>{
+        setTimeout(()=>resolve(p1,1000))
+    })
+    p2.then((result)=>{
+        console.log(result);
+    }).catch((err)=>{
+        console.log(err);
+    })
+
+    //输出：Error: fail at setTimeout (index2.html?_ijt=4jmtbksi3fhjf65signjtn9n0f:10)
+    //原因：刚开始（1s内），p2执行的状态是resolve，紧接着2s后执行p1，p1被resolved，而p2的状态因为p1而改变，故p1的状态就变成了rejected，即输出err
+</script>
+</body>
+</html>

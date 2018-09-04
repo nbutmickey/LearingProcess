@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise Test</title>
+</head>
+<body>
+<script>
+    function timeOut(ms) {
+        return new Promise((resolve,reject)=>{
+            setTimeout(resolve,ms,'done');
+        })
+    }
+    timeOut(10000).then((value)=>{
+        console.log(value);
+    })
+
+    //10s输出done
+</script>
+</body>
+</html>
