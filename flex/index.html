@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex布局</title>
+    <style type="text/css">
+        .flex{
+            display: flex;
+            flex-wrap: wrap;
+            height: 300px;
+            padding:15px;
+            background-color:#61a0f8;
+        }
+        .item{
+            flex: 0 0 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 26px;
+            color: white;
+            font-weight: bold;
+            background-color: #f08bc3;
+            margin: 15px;
+
+        }
+        .flex-2{
+            flex-grow: 2;
+            flex-shrink: 1;
+            flex-basis: 0%;
+        }
+    </style>
+</head>
+<body>
+<div class="flex">
+    <div class="item">1</div>
+    <div class="item flex-2">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">4</div>
+</div>
+</body>
+</html>
