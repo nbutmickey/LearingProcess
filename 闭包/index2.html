@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+
+</body>
+<script>
+    // function foo() {
+    //     let a=20
+    //     let b=30
+    //     function bar() {
+    //         return a+b
+    //     }
+    //     return bar
+    // }
+    // let bar=foo()
+    // console.log(bar());
+    let fn=null
+    function foo() {
+        let a=2
+        function innerFoo() {
+            console.log(a)
+        }
+        fn=innerFoo;
+    }
+    function bar() {
+        console.log("fn start");
+        fn()
+        console.log("fn end");
+    }
+    console.log("foo执行开始")
+    foo()
+    console.log("foo执行结束")
+    bar()
+</script>
+</html>

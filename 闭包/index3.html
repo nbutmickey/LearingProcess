@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包2</title>
+</head>
+<body>
+
+</body>
+<script>
+    // (function () {
+    //     let a=10
+    //     let b=20
+    //     function add(num1,num2) {
+    //         num1=!!num1 ? num1 : a
+    //         num2=!!num2 ? num2 : b
+    //         return num1+num2
+    //     }
+    //     window.add=add
+    // })()
+    // console.log(add(10,20));
+
+    // for (var i=1; i<=5; i++) {
+    //     (function () {
+    //         var j=i
+    //         setTimeout(function timer() {
+    //             console.log(j);
+    //         },i*1000)
+    //     })()
+    // }
+
+    for(var i=1;i<=5;i++){
+        let j=i;
+        setTimeout(function timer() {
+            console.log(j);
+        },j*1000)
+    }
+</script>
+</html>
