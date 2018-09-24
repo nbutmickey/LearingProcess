@@ -1,0 +1,16 @@
+{
+  "name": "read",
+  "version": "1.0.0",
+  "description": "",
+  "main": "readFile.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies":{
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

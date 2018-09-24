@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板引擎</title>
+</head>
+<body>
+<script>
+    var templateEngine=function (tpl,data) {
+
+    }
+    var template='<p>Hello,my name is <%name%>,I\'m <%age%> years old.</p>';
+    console.log(templateEngine(template,{
+        name:"mickey",
+        age:29
+    }));
+</script>
+</body>
+</html>

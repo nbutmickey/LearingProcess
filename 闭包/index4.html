@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+</body>
+<script>
+
+    // function out(x) {
+    //     var tmp=1;
+    //     return function inner(y) {
+    //         console.log(x+y+(++tmp));
+    //     }
+    // }
+    //
+    // var fn=out(10);
+    // fn(20)
+    // fn(20)
+    // fn(20)
+    // let db=(function () {
+    //     var data={};
+    //     return function (key,val) {
+    //         if(val===undefined){
+    //             return data[key]
+    //         }else{
+    //             return data[key]=val
+    //         }
+    //     }
+    // })()
+    // console.log(db('x'));
+    // console.log(db('x',2));
+    // console.log(db('x'));
+    // console.log(data['x']);
+
+    // function say667() {
+    //     // Local variable that ends up within closure
+    //     var num = 42;
+    //     var say = function() { console.log(num); }
+    //     num++;
+    //     return say;
+    // }
+    // var sayNumber = say667();
+    // sayNumber(); // logs 43
+
+    function buildList(list) {
+        var result = [];
+        for (let i = 0; i < list.length; i++) {
+            var item = 'item' + i;
+            result.push( function() {console.log(item + ' ' + list[i])} );
+        }
+        return result;
+    }
+
+    function testList() {
+        var fnlist = buildList([1,2,3]);
+        // Using j only to help prevent confusion -- could use i.
+        for (let j = 0; j < fnlist.length; j++) {
+            fnlist[j]();
+        }
+    }
+
+    testList() //logs "item2 undefined" 3 times
+</script>
+</html>

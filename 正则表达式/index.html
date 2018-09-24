@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式</title>
+</head>
+<body>
+<script>
+    let reg=/0\d{2}-\w{8}$/
+    let ss='010-243204232'
+    console.log(ss.match(reg));
+    // let reg=new RegExp("0(\\d){2,3}-+(\\w{7,8})")
+    // let ss='010-243204232'
+    // console.log(reg.test(ss))
+    // let reg=/\bhi\b.{0,13}\bLucy\b/
+    // let ss="hi, my name is Lucy,I have a long history and high"
+    // if(ss.match(reg)!==null){
+    //     console.log("match reg success!")
+    // }else{
+    //     console.log(ss.match(reg));
+    // }
+</script>
+</body>
+</html>
